@@ -9,6 +9,6 @@
 - Admin (admin/admin): http://localhost:3000/login
 ## Prometheus (metrics)
 - Web UI: http://localhost:9090
-## Jeager UI (traces)
+## Jaeger UI (traces)
 - Web UI: http://localhost:16686
 - Zipkin: http://localhost:9411
