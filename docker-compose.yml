@@ -36,12 +36,12 @@ services:
       - ./apisix_conf/config.yaml:/usr/local/apisix/conf/config.yaml:ro
     depends_on:
       - etcd
-    ##network_mode: host
     ports:
       - "9080:9080/tcp"
       - "9091:9091/tcp"
       - "9443:9443/tcp"
       - "9092:9092/tcp"
+    # network_mode: host
     networks:
       apisix:
 
@@ -136,7 +136,7 @@ services:
     networks:
       apisix:
 
-# tracer: jager
+# tracer: jaeger
   jaeger-collector:
     image: jaegertracing/jaeger-collector
     command:
@@ -152,9 +152,8 @@ services:
       - "14268:14268"
       - "14250"
       - "9411:9411"
-    restart: on-failure
     depends_on:
-      - cassandra-schema
+      - cassandra
     networks:
       apisix:
 
@@ -163,9 +162,6 @@ services:
     command: ["--cassandra.keyspace=jaeger_v1_dc1", "--cassandra.servers=cassandra"]
     ports:
       - "16686:16686"
-    restart: on-failure
-    depends_on:
-      - cassandra-schema
     networks:
       apisix:
 
@@ -177,7 +173,6 @@ services:
       - "6831:6831/udp"
       - "6832:6832/udp"
       - "5778:5778"
-    restart: on-failure
     depends_on:
       - jaeger-collector
     networks:
@@ -185,13 +180,6 @@ services:
 
   cassandra:
     image: cassandra:4.0
-    networks:
-      apisix:
-
-  cassandra-schema:
-    image: jaegertracing/jaeger-cassandra-schema
-    depends_on:
-      - cassandra
     networks:
       apisix:
 
