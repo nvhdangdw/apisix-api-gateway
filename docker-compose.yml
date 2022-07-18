@@ -130,7 +130,7 @@ services:
       KEYCLOAK_PASSWORD: password
       PROXY_ADDRESS_FORWARDING: "true"
     ports:
-      - 8080:8080
+      - 1010:8080
     depends_on:
       - postgres
     networks:
@@ -140,7 +140,6 @@ services:
   jaeger-collector:
     image: jaegertracing/jaeger-collector
     command:
-      - "--cassandra.keyspace=jaeger_v1_dc1"
       - "--cassandra.servers=cassandra"
       - "--collector.zipkin.host-port=9411"
       - "--sampling.initial-sampling-probability=.5"
@@ -159,7 +158,8 @@ services:
 
   jaeger-query:
     image: jaegertracing/jaeger-query
-    command: ["--cassandra.keyspace=jaeger_v1_dc1", "--cassandra.servers=cassandra"]
+    command: 
+      "--cassandra.servers=cassandra"
     ports:
       - "16686:16686"
     networks:
@@ -179,7 +179,11 @@ services:
       apisix:
 
   cassandra:
-    image: cassandra:4.0
+    image: cassandra
+    environment:
+      - CASSANDRA_BROADCAST_ADDRESS=127.0.0.1
+    ports:
+      - "9042:9042"
     networks:
       apisix:
 
