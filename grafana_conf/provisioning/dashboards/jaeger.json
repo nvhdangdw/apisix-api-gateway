@@ -1,0 +1,12 @@
+{
+    "realm": "apisix_test_realm",
+    "auth-server-url": "http://192.168.2.105:1010/auth/",
+    "ssl-required": "external",
+    "resource": "apisix",
+    "verify-token-audience": true,
+    "credentials": {
+      "secret": "9f03b362-26bb-42fa-b871-51aa596a8ab0"
+    },
+    "use-resource-role-mappings": true,
+    "confidential-port": 0
+  }
