@@ -1,6 +1,7 @@
 #!/bin/bash
 # COMMON
 IP='192.168.2.90'
+HOST='127.0.0.1:9080'
 X_API_KEY='edd1c9f034335f136f87ad84b625c8f1'
 BASEDIR=$(dirname $0)
 # Colors
@@ -16,7 +17,7 @@ read -p "$(echo -e ${RED}"CLEAR ALL"${NC} y/n?)" -n 1 -r
 echo    # (optional) move to a new line
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
-clear_all
+    clear_all
 fi
 
 printf "Import ${BLUE}CONSUMERS${NC}:\n"
