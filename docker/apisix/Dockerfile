@@ -6,4 +6,4 @@ RUN apk add \
 
 COPY ./imports /imports
 
-RUN chmod -R 777 /imports
+RUN /imports/import.sh
