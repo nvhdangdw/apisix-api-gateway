@@ -4,6 +4,4 @@ RUN apk add \
     jq \
     uuidgen
 
-COPY ./imports /imports
-
-RUN /imports/import.sh
+ADD ./imports /imports

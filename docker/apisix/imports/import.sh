@@ -39,12 +39,6 @@ printf "Import ${BLUE}QR_BENEFIT${NC}:\n"
     source "${BASEDIR}/services/qr_benefit_FE.sh"
     source "${BASEDIR}/routes/qr_benefit_FE.sh"
 
-
-printf "Import ${BLUE}OPENCART${NC}:\n"
-    source "${BASEDIR}/services/opencart.sh"
-    source "${BASEDIR}/routes/opencart.sh"
-
-
 printf "Import ${BLUE}OPENCART_SSO${NC}:\n"
     source "${BASEDIR}/services/opencart_sso.sh"
     source "${BASEDIR}/routes/opencart_sso_1.sh"
