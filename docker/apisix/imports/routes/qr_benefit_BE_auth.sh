@@ -8,7 +8,7 @@ data='{
       "audience": "apisix",
       "disable": false,
       "discovery": "http://'"$IP"':1010/auth/realms/apisix_test_realm/.well-known/openid-configuration",
-      "permissions": ["qr-benefit#scope_all"]
+      "permissions": ["qr-benefit#scope-qrb_all"]
     },
     "csrf": { "disable": false, "key": "edd1c9f034335f136f87ad84b625c8f1" },
     "forward-auth": {
