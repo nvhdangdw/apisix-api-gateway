@@ -1,7 +1,7 @@
 #!/bin/bash
 # COMMON
-IP='192.168.2.90'
-HOST='127.0.0.1:9080'
+IP='101.0.68.210'
+HOST='101.0.68.210:9080'
 X_API_KEY='edd1c9f034335f136f87ad84b625c8f1'
 BASEDIR=$(dirname $0)
 # Colors
