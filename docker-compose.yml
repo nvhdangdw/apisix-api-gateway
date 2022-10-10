@@ -23,7 +23,7 @@ services:
     volumes:
     - ./dashboard_conf/conf.yaml:/usr/local/apisix-dashboard/conf/conf.yaml
     ports:
-    - "9000:9000"
+    - "9001:9000"
     restart: always
     networks:
       apisix:
@@ -38,7 +38,7 @@ services:
     ports:
       - "9080:9080/tcp"
       - "9091:9091/tcp"
-      - "9443:9443/tcp"
+      # - "9443:9443/tcp"
       - "443:9443/tcp"
       - "9092:9092/tcp"
     restart: always
