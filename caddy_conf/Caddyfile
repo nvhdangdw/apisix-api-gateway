@@ -1,5 +1,4 @@
 {
-  debug
   auto_https disable_redirects
 
   servers {
