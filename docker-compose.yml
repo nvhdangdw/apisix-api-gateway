@@ -60,24 +60,12 @@ services:
     networks:
       apisix:
 
-  web1:
+  nginx-test.rewards-plus.com.au:
     image: nginx:1.19.0-alpine
     volumes:
-      - ./upstream/web1.conf:/etc/nginx/nginx.conf
+      - ./upstream/test.rewards-plus.com.au.conf:/etc/nginx/nginx.conf
     ports:
       - "9081:80/tcp"
-    environment:
-      - NGINX_PORT=80
-    restart: always
-    networks:
-      apisix:
-
-  web2:
-    image: nginx:1.19.0-alpine
-    volumes:
-      - ./upstream/web2.conf:/etc/nginx/nginx.conf
-    ports:
-      - "9082:80/tcp"
     environment:
       - NGINX_PORT=80
     restart: always
