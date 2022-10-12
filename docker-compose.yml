@@ -64,8 +64,6 @@ services:
     image: nginx:1.19.0-alpine
     volumes:
       - ./upstream/test.rewards-plus.com.au.conf:/etc/nginx/nginx.conf
-    ports:
-      - "9081:80/tcp"
     environment:
       - NGINX_PORT=80
     restart: always
