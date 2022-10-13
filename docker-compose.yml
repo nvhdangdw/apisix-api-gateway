@@ -60,15 +60,6 @@ services:
     networks:
       apisix:
 
-  caddy:
-    image: abiosoft/caddy
-    restart: always
-    ports:
-    - "80:80"
-    - "443:443"
-    volumes:
-    - "./caddy_conf/Caddyfile:/etc/Caddyfile"
-
   nginx-test.rewards-plus.com.au:
     image: nginx:1.19.0-alpine
     volumes:

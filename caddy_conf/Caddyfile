@@ -1,9 +1,9 @@
 keycloak.apisix.mbasrv2.com {
-  reverse_proxy 101.0.68.210:1010
+  reverse_proxy http://101.0.68.210:1010
 }
 
 qr-benefits.apisix.mbasrv2.com {
-  reverse_proxy 101.0.68.210:9080
+  reverse_proxy http://101.0.68.210:9080
 }
 
 test.rewards-plus.mbasrv2.com {
